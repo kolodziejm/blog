@@ -1,6 +1,7 @@
 ---
 title: Yo dawg!
 date: "2018-09-28"
+category: Design
 ---
 
 To jest test nowego startera blogowego!

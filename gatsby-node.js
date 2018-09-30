@@ -8,6 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
+    const categoryTemplate = path.resolve('./src/templates/category.js');
     resolve(
       graphql(
         `
@@ -20,6 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    category
                   }
                 }
               }
@@ -47,6 +49,15 @@ exports.createPages = ({ graphql, actions }) => {
               previous,
               next,
             },
+          })
+        })
+        posts.forEach((post, index) => {
+          createPage({
+            path: post.node.frontmatter.category,
+            component: categoryTemplate,
+            context: {
+              category :post.node.frontmatter.category
+            }
           })
         })
       })

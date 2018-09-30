@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby-Config Title',
-    author: 'Gatsby-Config Author',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    title: 'Kolomar Blog',
+    author: 'Marcin Kołodziej',
+    description: 'Blog about front-end stuff, self-improvement and more!',
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
   },
   pathPrefix: '/gatsby-starter-blog',

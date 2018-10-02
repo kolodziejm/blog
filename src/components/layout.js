@@ -4,20 +4,10 @@ import './reset.js';
 
 class Template extends React.Component {
   render() {
-    const { children } = this.props
-
-    let header = (
-      <h1>
-        <Link to={'/'}>
-          Gatsby Starter Blog
-        </Link>
-      </h1>
-    )
 
     return (
       <div>
-        {header}
-        {children}
+        {this.props.children}
       </div>
     )
   }

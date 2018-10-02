@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 
+import HeadLink from '../components/HeadLink';
+
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title;
@@ -32,9 +34,10 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
+          meta={[{ name: 'Index page of the blog', content: siteDescription }]}
           title={siteTitle}
         />
+        <HeadLink to="/"/>
         {postsMapped}
       </Layout>
     )

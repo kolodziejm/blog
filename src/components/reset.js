@@ -14,6 +14,8 @@ html {
 }
     
 body {
+    @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700');
+    font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
     line-height: 1.3;

@@ -6,6 +6,7 @@ const NavLink = styled(Link)`
     font-size: 2.4rem;
     text-decoration: none;
     color: #fff;
+    padding: ${props => props.padding};
 `;
 
 const Logo = styled.span`
@@ -13,5 +14,5 @@ const Logo = styled.span`
 `;
 
 export default (props) => (
-    <NavLink to={props.to}><Logo>&lt;/&gt;</Logo> Kolomar</NavLink>
+    <NavLink to="/" padding={props.padding}><Logo>&lt;/&gt;</Logo> Kolomar</NavLink>
 );

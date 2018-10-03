@@ -5,9 +5,7 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 
-import HeadLink from '../components/HeadLink';
-import Hamburger from '../components/navigation/Hamburger';
-import NavContainer from '../components/navigation/NavbarContainer';
+import MobileNav from '../components/navigation/Mobile/MobileNav';
 
 class BlogIndex extends React.Component {
   render() {
@@ -39,11 +37,7 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'Index page of the blog', content: siteDescription }]}
           title={siteTitle}
         />
-        <NavContainer>
-          <HeadLink to="/"/>
-          <Hamburger />
-        </NavContainer>
-        
+        <MobileNav homeActive/>
         {postsMapped}
       </Layout>
     )

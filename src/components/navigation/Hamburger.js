@@ -10,6 +10,10 @@ const Button = styled.button`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (min-width: 48em) {
+        display: none;
+    }    
 `;
 
 export default (props) => (

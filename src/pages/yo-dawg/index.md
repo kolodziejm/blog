@@ -2,6 +2,7 @@
 title: Yo dawg!
 date: "2018-09-28"
 category: Design
+thumbnail: './learn.jpeg'
 ---
 
 To jest test nowego startera blogowego!

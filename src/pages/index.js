@@ -5,15 +5,32 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 
-import MobileNav from '../components/navigation/Mobile/MobileNav';
+import Navigation from '../components/navigation/Navigation';
+import PageHeader from '../components/typography/PageHeader';
 
 class BlogIndex extends React.Component {
+
+  state = {
+    showMobileNav: false
+  }
+
+  switchMobileNav = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      showMobileNav: !this.state.showMobileNav
+    })
+  }
+
+
   render() {
+
     const siteTitle = this.props.data.site.siteMetadata.title;
     const siteDescription = this.props.data.site.siteMetadata.description;
     const posts = this.props.data.allMarkdownRemark.edges;
 
     const postsMapped = posts.map(({ node }) => {
+      console.log(node);
       const title = get(node, 'frontmatter.title') || node.fields.slug
       return (
         <div key={node.fields.slug}>
@@ -37,7 +54,8 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'Index page of the blog', content: siteDescription }]}
           title={siteTitle}
         />
-        <MobileNav homeActive/>
+        <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
+        <PageHeader margin="3rem 0 0 0">All posts</PageHeader>
         {postsMapped}
       </Layout>
     )
@@ -66,6 +84,16 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            category
+            thumbnail {
+              childImageSharp {
+                fluid {
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
           }
         }
       }

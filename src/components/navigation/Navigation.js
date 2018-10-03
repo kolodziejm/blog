@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from '../NavbarContainer';
-import Hamburger from '../Hamburger';
-import HeadLink from '../../HeadLink';
+import Container from './NavbarContainer';
+import Hamburger from './Hamburger';
+import HeadLink from '../HeadLink';
 
 import { Link } from 'gatsby';
 
 const MobileList = styled.ul`
     width: 100%;
     list-style: none;
-    display: flex;
+    display: ${props => props.showMobileNav ? 'flex' : 'none'};
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -56,11 +56,11 @@ const DesktopItem = styled.li`
 
 const DesktopLink = styled(Link)`
     text-decoration: none;
-    color: #fff;
+    color: ${props => props.active ? '#FF006E' : '#fff'};
     font-size: 1.5rem;
 `;
 
-// props.homeActive etc.
+// WPROWADZIĆ CONTENT LIMITER, MAX WIDTH 1200px
 
 export default (props) => (
     <React.Fragment>
@@ -68,18 +68,18 @@ export default (props) => (
             <HeadLink />
             <Hamburger clicked={props.hamburgerClicked} />
             <DesktopList>
-                <DesktopItem active={props.homeActive}>
-                    <DesktopLink to="/">Home</DesktopLink>
+                <DesktopItem>
+                    <DesktopLink active={props.homeActive} to="/">Home</DesktopLink>
                 </DesktopItem>
-                <DesktopItem active={props.categoriesActive}>
-                    <DesktopLink to="/categories">Categories</DesktopLink>
+                <DesktopItem>
+                    <DesktopLink active={props.categoriesActive} to="/categories">Categories</DesktopLink>
                 </DesktopItem>
-                <DesktopItem active={props.aboutActive}>
-                    <DesktopLink to="/about">About me</DesktopLink>
+                <DesktopItem>
+                    <DesktopLink active={props.aboutActive} to="/about">About me</DesktopLink>
                 </DesktopItem>
             </DesktopList>
         </Container>
-        <MobileList>
+        <MobileList showMobileNav={props.showMobileNav}>
             <MobileItem active={props.homeActive}>
                 <MobileLink to="/">Home</MobileLink>
             </MobileItem>

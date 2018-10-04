@@ -7,6 +7,8 @@ import Layout from '../components/layout'
 
 import Navigation from '../components/navigation/Navigation';
 import PageHeader from '../components/typography/PageHeader';
+import Card from '../components/card/Card';
+
 
 class BlogIndex extends React.Component {
 
@@ -56,7 +58,8 @@ class BlogIndex extends React.Component {
         />
         <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
         <PageHeader margin="3rem 0 0 0">All posts</PageHeader>
-        {postsMapped}
+        <Card title="How to learn React"/> 
+        {/* {postsMapped} */}
       </Layout>
     )
   }

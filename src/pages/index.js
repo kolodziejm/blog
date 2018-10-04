@@ -35,17 +35,31 @@ class BlogIndex extends React.Component {
       console.log(node);
       const title = get(node, 'frontmatter.title') || node.fields.slug
       return (
-        <div key={node.fields.slug}>
-          <h3>
-            <Link to={node.fields.slug}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <br/>
-          <small>Time to read: {node.timeToRead} minutes</small>
-          <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        </div>
+        // <div key={node.fields.slug}>
+        //   <h3>
+        //     <Link to={node.fields.slug}>
+        //       {title}
+        //     </Link>
+        //   </h3>
+        //   <small>{node.frontmatter.date}</small>
+        //   <br/>
+        //   <small>Time to read: {node.timeToRead} minutes</small>
+        //   <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+        // </div>
+        // LOWERCASE CATEGORY W LINKU!
+        <Card
+        src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
+        srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
+        sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
+        title={title}
+        date={node.frontmatter.date} 
+        key={node.fields.slug}
+        categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
+        category={node.frontmatter.category}
+        time={node.timeToRead}
+        description={node.excerpt}
+        postTo={node.fields.slug}
+        />
       )
     })
 
@@ -58,8 +72,7 @@ class BlogIndex extends React.Component {
         />
         <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
         <PageHeader margin="3rem 0 0 0">All posts</PageHeader>
-        <Card title="How to learn React"/> 
-        {/* {postsMapped} */}
+        {postsMapped}
       </Layout>
     )
   }

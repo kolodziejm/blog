@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MdMenu } from 'react-icons/md';
+import { MdMenu, MdClose } from 'react-icons/md';
 
 const Button = styled.button`
     font-size: 3.4rem;
@@ -17,6 +17,6 @@ const Button = styled.button`
 `;
 
 export default (props) => (
-    <Button onClick={props.clicked}><MdMenu fill="#fff"/></Button>
+<Button onClick={props.clicked}>{props.active ? <MdClose fill="#fff"/> : <MdMenu fill="#fff"/>}</Button>
 );
 

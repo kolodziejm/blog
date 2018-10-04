@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export default styled.nav`
     background-color: #8338ec;
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 1.5rem;
     width: 100%;
     display: flex;

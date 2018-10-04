@@ -14,6 +14,8 @@ const MobileList = styled.ul`
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: fixed;
+    top: 66px;
 
     @media only screen and (min-width: 48em) {
         display: none;
@@ -66,7 +68,7 @@ export default (props) => (
     <React.Fragment>
         <Container>
             <HeadLink />
-            <Hamburger clicked={props.hamburgerClicked} />
+            <Hamburger clicked={props.hamburgerClicked} active={props.showMobileNav}/>
             <DesktopList>
                 <DesktopItem>
                     <DesktopLink active={props.homeActive} to="/">Home</DesktopLink>

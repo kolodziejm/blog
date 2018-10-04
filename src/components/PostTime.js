@@ -6,10 +6,11 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: ${props => props.margin};
 `;
 
 const Text = styled.span`
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: .3rem;
     color: #666;
 `;

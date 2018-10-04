@@ -53,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
         posts.forEach((post, index) => {
           createPage({
-            path: post.node.frontmatter.category,
+            path: post.node.frontmatter.category.toLowerCase(),
             component: categoryTemplate,
             context: {
               category :post.node.frontmatter.category

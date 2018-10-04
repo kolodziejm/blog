@@ -7,18 +7,19 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: ${props => props.margin};
 `;
 
 const Text = styled(Link)`
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: .3rem;
     color: #FF006E;
 `;
 
 export default ( props ) => (
     <Wrapper>
-        <MdList fill="#000" size="1.2rem"/>
-        <Text to={props.to}>{props.category}</Text>
+        <MdList fill="#000" size="1.6rem"/>
+        <Text to={props.categoryTo}>{props.category}</Text>
     </Wrapper>
 ); 

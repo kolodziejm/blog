@@ -71,8 +71,6 @@ const Limiter = styled.div`
     margin: 0 auto;
 `;
 
-// WPROWADZIĆ CONTENT LIMITER, MAX WIDTH 1200px
-
 export default (props) => (
     <React.Fragment>
         <Container>

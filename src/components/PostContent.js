@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
     max-width: 80rem;
-    margin: 0 auto;
+    margin: 0 auto 6rem auto;
     font-size: 1.8rem;
     padding: 0 1.5rem;
     color: #333;

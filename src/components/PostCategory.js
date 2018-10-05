@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { MdList } from 'react-icons/md';
 
-const Wrapper = styled.div`
+const Wrapper = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;

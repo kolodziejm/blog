@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import './reset.js';
 import Footer from './Footer.js';
 
-const Div = styled.div`
+const Div = styled.main`
   margin-top: 7rem;
 `;
 class Template extends React.Component {

@@ -33,21 +33,8 @@ class BlogIndex extends React.Component {
     const posts = this.props.data.allMarkdownRemark.edges;
 
     const postsMapped = posts.map(({ node }) => {
-      console.log(node);
       const title = get(node, 'frontmatter.title') || node.fields.slug
       return (
-        // <div key={node.fields.slug}>
-        //   <h3>
-        //     <Link to={node.fields.slug}>
-        //       {title}
-        //     </Link>
-        //   </h3>
-        //   <small>{node.frontmatter.date}</small>
-        //   <br/>
-        //   <small>Time to read: {node.timeToRead} minutes</small>
-        //   <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        // </div>
-        // LOWERCASE CATEGORY W LINKU!
         <Card
         src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
         srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}

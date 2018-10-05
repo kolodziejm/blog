@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdDateRange } from 'react-icons/md';
 
-const Wrapper = styled.div`
+const Wrapper = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;

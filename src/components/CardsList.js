@@ -8,4 +8,5 @@ export default styled.ul`
     justify-content: center;
     align-items: center;
     max-width: 55rem;
+    padding: 0 1rem;
 `;

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Header from '../typography/MediumHeader';
-import Thumbnail from './Thumbnail';
+import Thumbnail from '../Thumbnail';
+import InfoContainer from '../InfoContainer';
 
 import PostDate from '../PostDate';
 import PostTime from '../PostTime';
@@ -19,16 +20,6 @@ const Container = styled.li`
     }
 `;
 
-const InfoContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    @media only screen and (min-width: 48em) {
-        margin-bottom: 2rem;
-    }
-`;
 
 const CardHeader = styled(Header)`
     text-align: center;
@@ -41,7 +32,7 @@ const CardHeader = styled(Header)`
 
 const CardDescription = styled.p`
     font-size: 1.6rem;
-    color: #666;
+    color: #333;
     margin-bottom: 1.5rem;
 `;
 

@@ -10,14 +10,14 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.span`
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-left: .3rem;
     color: #666;
 `;
 
 export default ( props ) => (
     <Wrapper>
-        <MdDateRange fill="#000" size="1.2rem"/>
+        <MdDateRange fill="#8338EC" size="1.2rem"/>
         <Text>{props.date}</Text>
     </Wrapper>
 ); 

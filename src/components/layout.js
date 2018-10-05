@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import './reset.js';
+import Footer from './Footer.js';
 
 const Div = styled.div`
-  margin-top: 66px;
+  margin-top: 7rem;
 `;
 class Template extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class Template extends React.Component {
     return (
       <Div>
         {this.props.children}
+        <Footer/>
       </Div>
     )
   }

@@ -11,6 +11,18 @@ injectGlobal`
  
 html {
     font-size: 62.5%; // 1 rem = 10px;
+
+    @media only screen and (min-width: 48em) {
+        font-size: 67.5%;
+    }
+
+    @media only screen and (min-width: 64em) {
+        font-size: 72.5%;
+    }
+
+    @media only screen and (min-width: 75em) {
+        font-size: 75.5%;
+    }
 }
     
 body {
@@ -18,5 +30,5 @@ body {
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
-    line-height: 1.3;
+    line-height: 1.5;
 }`

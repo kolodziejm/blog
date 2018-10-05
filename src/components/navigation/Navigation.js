@@ -38,6 +38,8 @@ const MobileLink = styled(Link)`
     font-size: 1.5rem;
 `;
 
+// DESKTOP ***************************************************************************
+
 const DesktopList = styled.ul`
     list-style: none;
     display: none;
@@ -58,8 +60,15 @@ const DesktopItem = styled.li`
 
 const DesktopLink = styled(Link)`
     text-decoration: none;
-    color: ${props => props.active ? '#FF006E' : '#fff'};
+    color: ${props => props.active ? '#ABFF4F' : '#fff'};
     font-size: 1.5rem;
+`;
+
+const Limiter = styled.div`
+    display: flex;
+    justify-content: space-between;
+    max-width: 60rem;
+    margin: 0 auto;
 `;
 
 // WPROWADZIĆ CONTENT LIMITER, MAX WIDTH 1200px
@@ -67,6 +76,7 @@ const DesktopLink = styled(Link)`
 export default (props) => (
     <React.Fragment>
         <Container>
+            <Limiter>
             <HeadLink />
             <Hamburger clicked={props.hamburgerClicked} active={props.showMobileNav}/>
             <DesktopList>
@@ -80,6 +90,7 @@ export default (props) => (
                     <DesktopLink active={props.aboutActive} to="/about">About me</DesktopLink>
                 </DesktopItem>
             </DesktopList>
+            </Limiter>
         </Container>
         <MobileList showMobileNav={props.showMobileNav}>
             <MobileItem active={props.homeActive}>

@@ -21,14 +21,22 @@ const Container = styled.li`
 
 const InfoContainer = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 1rem;
+
+    @media only screen and (min-width: 48em) {
+        margin-bottom: 2rem;
+    }
 `;
 
 const CardHeader = styled(Header)`
     text-align: center;
     margin-bottom: 1.5rem;
+
+     @media only screen and (min-width: 48em) {
+        margin-bottom: 2rem;
+    }
 `;
 
 const CardDescription = styled.p`
@@ -45,6 +53,10 @@ const ReadMoreBtn = styled(Link)`
     color: #fff;
     background-color: #FF006E;
     font-size: 1.6rem;
+
+    &:hover {
+        background-color: #cc0058;
+    }
 `;
 
 export default ( props ) => (

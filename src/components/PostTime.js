@@ -10,14 +10,14 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.span`
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-left: .3rem;
     color: #666;
 `;
 
 export default ( props ) => (
     <Wrapper>
-        <MdSchedule fill="#000" size="1.2rem"/>
+        <MdSchedule fill="#8338EC" size="1.2rem"/>
         <Text>{props.time} {props.time === 1 ? 'minute' : 'minutes'}</Text>
     </Wrapper>
 ); 

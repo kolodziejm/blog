@@ -7,8 +7,8 @@ export default styled.nav`
     left: 0;
     padding: 1.5rem;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     border-bottom: 2px solid #999;
 
     /* na kolejne breakpointy znacząco zwiększyć paddingi po bokach, na najwyższy dać procentowo ?? */

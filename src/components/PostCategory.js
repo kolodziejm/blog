@@ -12,14 +12,18 @@ const Wrapper = styled.div`
 
 const Text = styled(Link)`
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-left: .3rem;
     color: #FF006E;
+
+    &:hover {
+        color: #cc0058;
+    }
 `;
 
 export default ( props ) => (
     <Wrapper>
-        <MdList fill="#000" size="1.6rem"/>
+        <MdList fill="#8338EC" size="1.6rem"/>
         <Text to={props.categoryTo}>{props.category}</Text>
     </Wrapper>
 ); 

@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import Navigation from '../components/navigation/Navigation';
 import PageHeader from '../components/typography/PageHeader';
 import Card from '../components/card/Card';
+import CardsList from '../components/CardsList';
 
 
 class BlogIndex extends React.Component {
@@ -71,8 +72,10 @@ class BlogIndex extends React.Component {
           title={siteTitle}
         />
         <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
-        <PageHeader margin="3rem 0 0 0">All posts</PageHeader>
-        {postsMapped}
+        <PageHeader margin="9rem 0 3rem 0">All posts</PageHeader>
+        <CardsList>
+          {postsMapped}
+        </CardsList>
       </Layout>
     )
   }

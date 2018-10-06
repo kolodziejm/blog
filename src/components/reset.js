@@ -20,9 +20,9 @@ html {
         font-size: 72.5%;
     }
 
-    @media only screen and (min-width: 75em) {
+    /* @media only screen and (min-width: 75em) {
         font-size: 75.5%;
-    }
+    } */
 }
     
 body {

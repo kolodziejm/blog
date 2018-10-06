@@ -15,7 +15,7 @@ const MobileList = styled.ul`
     justify-content: center;
     text-align: center;
     position: fixed;
-    top: 66px;
+    top: 57px;
 
     @media only screen and (min-width: 48em) {
         display: none;

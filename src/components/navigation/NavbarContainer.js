@@ -5,7 +5,7 @@ export default styled.nav`
     position: fixed;
     top: 0;
     left: 0;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     width: 100%;
     z-index: 9999;
     border-bottom: 2px solid #999;

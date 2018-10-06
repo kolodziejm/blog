@@ -62,6 +62,7 @@ const DesktopLink = styled(Link)`
     text-decoration: none;
     color: ${props => props.active ? '#ABFF4F' : '#fff'};
     font-size: 1.5rem;
+    font-weight: bold;
 `;
 
 const Limiter = styled.div`

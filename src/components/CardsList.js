@@ -7,6 +7,6 @@ export default styled.ul`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 55rem;
+    max-width: 45rem;
     padding: 0 1rem;
 `;

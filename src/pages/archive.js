@@ -9,10 +9,9 @@ import Navigation from '../components/navigation/Navigation';
 import PageHeader from '../components/typography/PageHeader';
 import Card from '../components/card/Card';
 import CardsList from '../components/CardsList';
-import StyledLink from '../components/Link';
 
 
-class BlogIndex extends React.Component {
+class Archive extends React.Component {
 
   state = {
     showMobileNav: false
@@ -59,8 +58,8 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'Index page of the blog', content: siteDescription }]}
           title={siteTitle}
         />
-        <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
-        <PageHeader margin="9rem 0 3rem 0">Latest posts</PageHeader>
+        <Navigation archiveActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
+        <PageHeader margin="9rem 0 3rem 0">Entire post library</PageHeader>
         <CardsList>
           {postsMapped}
         </CardsList>
@@ -69,7 +68,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default Archive;
 
 export const pageQuery = graphql`
   query {
@@ -79,7 +78,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC } limit: 10) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

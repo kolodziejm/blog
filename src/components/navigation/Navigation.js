@@ -86,6 +86,9 @@ export default (props) => (
                     <DesktopLink active={props.categoriesActive} to="/categories">Categories</DesktopLink>
                 </DesktopItem>
                 <DesktopItem>
+                    <DesktopLink active={props.archiveActive} to="/archive">Posts archive</DesktopLink>
+                </DesktopItem>
+                <DesktopItem>
                     <DesktopLink active={props.aboutActive} to="/about">About me</DesktopLink>
                 </DesktopItem>
             </DesktopList>
@@ -97,6 +100,9 @@ export default (props) => (
             </MobileItem>
             <MobileItem active={props.categoriesActive}>
                 <MobileLink to="/categories">Categories</MobileLink>
+            </MobileItem>
+            <MobileItem active={props.archiveActive}>
+                <MobileLink to="/archive">Posts archive</MobileLink>
             </MobileItem>
             <MobileItem active={props.aboutActive}>
                 <MobileLink to="/about">About me</MobileLink>

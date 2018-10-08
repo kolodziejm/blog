@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: post.node.frontmatter.category.toLowerCase(),
             component: categoryTemplate,
             context: {
-              category :post.node.frontmatter.category
+              category: post.node.frontmatter.category
             }
           })
         })

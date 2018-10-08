@@ -17,7 +17,7 @@ const CategoriesContainer = styled.ul`
 `;
 
 const CategoriesItem = styled.li`
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 `;
 
 
@@ -43,16 +43,25 @@ class Categories extends React.Component {
     const posts = this.props.data.allMarkdownRemark.edges;
 
     let categoriesArr = [];
-    const categories = posts.forEach(post => {
+    posts.forEach(post => {
       categoriesArr.push(post.node.frontmatter.category);
-      // return (
-      // <CategoriesItem key={post.node.id}>
-      //   <StyledLink to={`/${post.node.frontmatter.category.toLowerCase()}`}>{post.node.frontmatter.category}</StyledLink>
-      // </CategoriesItem>
-      // )
     })
 
-    console.log(categoriesArr)
+    // Eliminate dupes
+    const categories = categoriesArr.filter((value, index, array) => {
+      return array.indexOf(value) == index;
+    });
+
+    console.log(categories);
+
+    const mappedCategories = categories.map(category => {
+      return (
+        <CategoriesItem key={category}>
+          <StyledLink to={`/${category.toLowerCase()}`}>{category}</StyledLink>
+        </CategoriesItem>
+      );
+    })
+
 
     return (
       <Layout location={this.props.location}>
@@ -64,7 +73,7 @@ class Categories extends React.Component {
         <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
         <PageHeader margin="9rem 0 3rem 0">Post categories</PageHeader>
         <CategoriesContainer>
-          {/* {categories} */}
+          {mappedCategories}
         </CategoriesContainer>
       </Layout>
     )

@@ -52,6 +52,12 @@ Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
 didn’t listen. She packed her seven versalia, put her initial into the belt and
 made herself on the way.
 
+```javascript
+var myFunction = function(){
+  alert('hello world');
+}
+```
+
 1.  So baboon this
 2.  Mounted militant weasel gregariously admonishingly straightly hey
 3.  Dear foresaw hungry and much some overhung

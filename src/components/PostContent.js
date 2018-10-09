@@ -145,8 +145,7 @@ figure {
 }
 
 pre {
-    margin-bottom: 2.32rem;
-    background: hsla(0, 0%, 0%, 0.04);
+  margin-bottom: 2.32rem;
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
@@ -245,7 +244,7 @@ li > p {
 
 code {
     line-height: 2.32rem;
-    font-size: 0.85rem;
+    font-size: 1.6rem;
 }
 
 kbd {
@@ -293,32 +292,4 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0;
-}
-tt,
-code {
-  background-color: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-}
-pre code {
-  background: none;
-  line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: " ";
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: "";
-}
-`;
+}`;

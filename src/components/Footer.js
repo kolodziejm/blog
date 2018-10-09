@@ -8,11 +8,11 @@ const Container = styled.footer`
 `;
 
 const Legal = styled.p`
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #fff;
 `;
 
-export default ( props ) => (
+export default (props) => (
     <Container>
         <Legal>Copyright &copy; Marcin Kołodziej 2018</Legal>
     </Container>

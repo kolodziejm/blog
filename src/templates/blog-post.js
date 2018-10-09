@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import { DiscussionEmbed } from "disqus-react";
 
 import Layout from '../components/layout'
 import PageHeader from '../components/typography/PageHeader';
@@ -22,6 +23,13 @@ const PostThumbnail = styled(Thumbnail)`
     margin-bottom: 3rem;
   }
 `;
+
+const DisqusWrapper = styled.div`
+  max-width: 80rem;
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin: 2rem auto 2rem auto;
+`;
 class BlogPostTemplate extends React.Component {
 
   state = {
@@ -37,10 +45,14 @@ class BlogPostTemplate extends React.Component {
   }
 
   render() {
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
-    const siteDescription = post.excerpt
-    console.log(this.props);
+    const siteDescription = post.excerpt;
+    const disqusShortname = "kolomar";
+    const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title
+    };
 
     return (
       <Layout location={this.props.location}>
@@ -49,7 +61,7 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'Post page', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Navigation hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
+        <Navigation hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
         <PostContainer>
           <PageHeader margin="10rem 0 2rem 0">{post.frontmatter.title}</PageHeader>
           <InfoContainer>
@@ -61,8 +73,11 @@ class BlogPostTemplate extends React.Component {
             src={post.frontmatter.thumbnail.childImageSharp.fluid.src}
             srcSet={post.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
             sizes={post.frontmatter.thumbnail.childImageSharp.fluid.sizes} />
-          </PostContainer>
-          <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        </PostContainer>
+        <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        <DisqusWrapper>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </DisqusWrapper>
       </Layout>
     )
   }

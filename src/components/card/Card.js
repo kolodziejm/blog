@@ -52,7 +52,7 @@ const ReadMoreBtn = styled(Link)`
 
 export default ( props ) => (
     <Container>
-        <Thumbnail src={props.src} srcSet={props.srcSet} sizes={props.sizes}/>
+        <Link to={props.postTo}><Thumbnail src={props.src} srcSet={props.srcSet} sizes={props.sizes}/></Link>
         <CardHeader>{props.title}</CardHeader>
         <InfoContainer>
             <PostDate date={props.date}/>

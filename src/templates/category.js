@@ -10,6 +10,19 @@ import CardsList from '../components/CardsList';
 import Card from '../components/card/Card';
 
 class CategoryTemplate extends React.Component {
+
+    state = {
+        showMobileNav: false
+      }
+    
+      switchMobileNav = (e) => {
+        e.preventDefault();
+    
+        this.setState({
+          showMobileNav: !this.state.showMobileNav
+        })
+      }
+
     render() {
         const posts = this.props.data.allMarkdownRemark.edges;
         const siteTitle = this.props.data.site.siteMetadata.title;
@@ -45,7 +58,7 @@ class CategoryTemplate extends React.Component {
                     meta={[{ name: 'description', content: siteDescription }]}
                     title={`${category} | ${siteTitle}`}
                 />
-                <Navigation categoriesActive="true" />
+                <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
                 <PageHeader margin="9rem 0 3rem 0">{category}</PageHeader>
                 <CardsList>
                     {postsMapped}

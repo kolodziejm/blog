@@ -2,10 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SimpleNavigation from '../components/navigation/SimpleNavigation';
 import PageHeader from '../components/typography/PageHeader';
 import Thumbnail from '../components/Thumbnail';
 import InfoContainer from '../components/InfoContainer';
@@ -24,6 +23,19 @@ const PostThumbnail = styled(Thumbnail)`
   }
 `;
 class BlogPostTemplate extends React.Component {
+
+  state = {
+    showMobileNav: false
+  }
+
+  switchMobileNav = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      showMobileNav: !this.state.showMobileNav
+    })
+  }
+
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title;
@@ -37,7 +49,7 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'Post page', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Navigation />
+        <Navigation hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
         <PostContainer>
           <PageHeader margin="10rem 0 2rem 0">{post.frontmatter.title}</PageHeader>
           <InfoContainer>

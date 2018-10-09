@@ -17,7 +17,7 @@ const CategoriesContainer = styled.ul`
 `;
 
 const CategoriesItem = styled.li`
-  margin-bottom: 3.5rem;
+  margin-bottom: 5rem;
 `;
 
 
@@ -71,7 +71,7 @@ class Categories extends React.Component {
           title={siteTitle}
         />
         <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
-        <PageHeader margin="9rem 0 3rem 0">Post categories</PageHeader>
+        <PageHeader margin="9rem 0 5rem 0">Post categories</PageHeader>
         <CategoriesContainer>
           {mappedCategories}
         </CategoriesContainer>

@@ -55,7 +55,7 @@ class Archive extends React.Component {
       <Layout location={this.props.location}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'Index page of the blog', content: siteDescription }]}
+          meta={[{ name: 'Entire post library', content: siteDescription }]}
           title={siteTitle}
         />
         <Navigation archiveActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>

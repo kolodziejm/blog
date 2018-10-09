@@ -1,28 +1,55 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import get from 'lodash/get'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import Navigation from '../components/navigation/Navigation';
+import PageHeader from '../components/typography/PageHeader';
+import CardsList from '../components/CardsList';
+import Card from '../components/card/Card';
 
 class CategoryTemplate extends React.Component {
     render() {
-        console.log(this.props.data)
-        // const post = this.props.data.markdownRemark
-        // const siteTitle = this.props.data.site.siteMetadata.title;
-        // const siteDescription = post.excerpt
+        const posts = this.props.data.allMarkdownRemark.edges;
+        const siteTitle = this.props.data.site.siteMetadata.title;
+        const siteDescription = this.props.data.site.siteMetadata.description;
+        const category = this.props.data.allMarkdownRemark.edges[0].node.frontmatter.category;
+
+        console.log(posts)
+
+        const postsMapped = posts.map(({node}) => {
+            console.log(node);
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return (
+                <Card
+                    src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
+                    srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
+                    sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
+                    title={title}
+                    date={node.frontmatter.date}
+                    key={node.fields.slug}
+                    categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
+                    category={node.frontmatter.category}
+                    time={node.timeToRead}
+                    description={node.excerpt}
+                    postTo={node.fields.slug}
+                />
+            );
+        })
 
         return (
             <Layout>
-                {/* <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-        /> */}
-                <h1>To strona kategorii</h1>
-                <p>
-                    Jeśli to widzisz to zajebiście!
-        </p>
-                {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+                <Helmet
+                    htmlAttributes={{ lang: 'en' }}
+                    meta={[{ name: 'description', content: siteDescription }]}
+                    title={`${category} | ${siteTitle}`}
+                />
+                <Navigation categoriesActive="true" />
+                <PageHeader margin="9rem 0 3rem 0">{category}</PageHeader>
+                <CardsList>
+                    {postsMapped}
+                </CardsList>
             </Layout>
         )
     }
@@ -36,21 +63,34 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        description
       }
     }
     allMarkdownRemark(filter: { frontmatter: { category:  { eq: $category }  } }) {
         edges {
-            node {
-                id
-                excerpt
-                html
-                frontmatter {
-                    title
-                    date(formatString: "MMMM DD, YYYY")
-                    category
+        node {
+          excerpt
+          id
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            title
+            category
+            thumbnail {
+              childImageSharp {
+                fluid {
+                  src
+                  srcSet
+                  sizes
                 }
+              }
             }
+          }
         }
+      }
      
     }
   }

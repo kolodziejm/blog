@@ -14,6 +14,7 @@ import PostCategory from '../components/PostCategory';
 import PostTime from '../components/PostTime';
 import PostContainer from '../components/PostContainer';
 import PostContent from '../components/PostContent';
+import Navigation from '../components/navigation/Navigation';
 
 const PostThumbnail = styled(Thumbnail)`
   margin-bottom: 2rem;
@@ -36,7 +37,7 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'Post page', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <SimpleNavigation />
+        <Navigation />
         <PostContainer>
           <PageHeader margin="10rem 0 2rem 0">{post.frontmatter.title}</PageHeader>
           <InfoContainer>

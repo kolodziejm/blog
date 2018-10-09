@@ -9,6 +9,7 @@ export default styled.nav`
     width: 100%;
     z-index: 9999;
     border-bottom: 2px solid #ABFF4F;
+    opacity: 0.95;
 
     @media only screen and (min-width: 48em) {
         padding: 1.5rem 4rem 1.5rem 1.5rem;

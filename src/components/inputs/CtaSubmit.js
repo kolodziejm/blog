@@ -7,4 +7,5 @@ export default styled.input`
     border: none;
     font-size: 1.6rem;
     text-align: center;
+    cursor: pointer;
 `;

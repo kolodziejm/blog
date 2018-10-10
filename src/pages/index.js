@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -10,6 +11,13 @@ import PageHeader from '../components/typography/PageHeader';
 import Card from '../components/card/Card';
 import CardsList from '../components/CardsList';
 import StyledLink from '../components/Link';
+import Container from '../components/cta/Container';
+import CtaHeader from '../components/typography/CtaHeader';
+import MediumHeader from '../components/typography/MediumHeader';
+import CtaExtra from '../components/typography/CtaExtra';
+import Form from '../components/cta/Form';
+import CtaInput from '../components/inputs/CtaInput';
+import CtaSubmit from '../components/inputs/CtaSubmit';
 
 
 class BlogIndex extends React.Component {
@@ -37,17 +45,17 @@ class BlogIndex extends React.Component {
       const title = get(node, 'frontmatter.title') || node.fields.slug
       return (
         <Card
-        src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
-        srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
-        sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
-        title={title}
-        date={node.frontmatter.date} 
-        key={node.fields.slug}
-        categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
-        category={node.frontmatter.category}
-        time={node.timeToRead}
-        description={node.excerpt}
-        postTo={node.fields.slug}
+          src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
+          srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
+          sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
+          title={title}
+          date={node.frontmatter.date}
+          key={node.fields.slug}
+          categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
+          category={node.frontmatter.category}
+          time={node.timeToRead}
+          description={node.excerpt}
+          postTo={node.fields.slug}
         />
       )
     })
@@ -59,8 +67,16 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'Index page of the blog', content: siteDescription }]}
           title={siteTitle}
         />
-        <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
-        <PageHeader margin="9rem 0 3rem 0">Latest posts</PageHeader>
+        <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
+        <Container>
+          <CtaHeader>Sign up for bonus material</CtaHeader>
+          <CtaExtra>Extra tips, challenges, ideas and much more!</CtaExtra>
+          <Form>
+            <CtaInput type="email" placeholder="Enter your email address" />
+            <CtaSubmit type="submit" value="SUBMIT" />
+          </Form>
+        </Container>
+        <PageHeader margin="3rem 0 3rem 0">Latest posts</PageHeader>
         <CardsList>
           {postsMapped}
         </CardsList>

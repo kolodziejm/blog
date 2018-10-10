@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -10,6 +11,9 @@ import PageHeader from '../components/typography/PageHeader';
 import Card from '../components/card/Card';
 import CardsList from '../components/CardsList';
 
+const ArchiveCardsList = styled(CardsList)`
+  max-width: 35rem;
+`;
 
 class Archive extends React.Component {
 
@@ -36,17 +40,17 @@ class Archive extends React.Component {
       const title = get(node, 'frontmatter.title') || node.fields.slug
       return (
         <Card
-        src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
-        srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
-        sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
-        title={title}
-        date={node.frontmatter.date} 
-        key={node.fields.slug}
-        categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
-        category={node.frontmatter.category}
-        time={node.timeToRead}
-        description={node.excerpt}
-        postTo={node.fields.slug}
+          src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
+          srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
+          sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
+          title={title}
+          date={node.frontmatter.date}
+          key={node.fields.slug}
+          categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
+          category={node.frontmatter.category}
+          time={node.timeToRead}
+          description={node.excerpt}
+          postTo={node.fields.slug}
         />
       )
     })
@@ -58,11 +62,11 @@ class Archive extends React.Component {
           meta={[{ name: 'Entire post library', content: siteDescription }]}
           title={siteTitle}
         />
-        <Navigation archiveActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
+        <Navigation archiveActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
         <PageHeader margin="9rem 0 3rem 0">Entire post library</PageHeader>
-        <CardsList>
+        <ArchiveCardsList>
           {postsMapped}
-        </CardsList>
+        </ArchiveCardsList>
       </Layout>
     )
   }

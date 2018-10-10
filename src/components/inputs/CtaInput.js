@@ -4,7 +4,6 @@ export default styled.input`
     display: block;
     background-color: #fff;
     border: 1px solid #ABFF4F;
-    border-radius: 3px;
     outline: none;
     color: #333;
     width: 100%;

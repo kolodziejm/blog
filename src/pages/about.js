@@ -76,7 +76,7 @@ class About extends React.Component {
                     <Paragraph>I created this blog to share my knowledge and give something back to the community, refresh a couple of concepts and improve my English skills along the way :) Because I started from scratch not that long ago, I'm aware of the beginner's most common pitfalls when it comes to learning front-end stuff. I deeply hope that you'll find value on my blog.</Paragraph>
                     <Paragraph>Outside of programming I'm striving to improve as a poker player and as a simrace car driver in Assetto Corsa :) Also I devote a lot of attention to the topics of self-improvement in order to become more effective.</Paragraph>
                     <ContentHeader>How did I build this blog?</ContentHeader>
-                    <Paragraph>I built this blog using GatsbyJS. It's an awesome, fast and modern static site generator that use React.</Paragraph>
+                    <Paragraph>I built this blog using GatsbyJS. It's an awesome, fast and modern static site generator that uses React.</Paragraph>
                     <ContentHeader>Main tools that I use</ContentHeader>
                     <ContentList>
                         <Item><b>Text editor:</b> VS Code Insiders</Item>

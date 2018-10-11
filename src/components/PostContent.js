@@ -72,7 +72,7 @@ h1 {
 h2 {
     margin-bottom: 2.32rem;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     text-rendering: optimizeLegibility;
 }
 
@@ -80,7 +80,7 @@ h3 {
     margin-bottom: 2.32rem;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    font-size: 2.24rem;
+    font-size: 2.1rem;
 }
 
 h4 {

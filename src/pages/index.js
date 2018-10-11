@@ -69,10 +69,10 @@ class BlogIndex extends React.Component {
         />
         <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
         <Container>
-          <CtaHeader>Sign up for bonus material</CtaHeader>
-          <CtaExtra margin="0 0 3rem 0">Extra tips, challenges, ideas and much more!</CtaExtra>
+          <CtaHeader>Sign up for bonus content</CtaHeader>
+          <CtaExtra margin="0 0 5rem 0">Extra tips, challenges, ideas and much more!</CtaExtra>
           <Form>
-            <CtaInput type="email" placeholder="Enter your email address" />
+            <CtaInput type="email" placeholder="Enter your email address" margin="0 auto 1rem auto" />
             <CtaSubmit type="submit" value="Sign me up!" />
           </Form>
         </Container>

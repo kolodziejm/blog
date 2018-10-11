@@ -7,7 +7,7 @@ export default styled.header`
     text-align: center;
     padding: 6rem 1rem 1rem 1rem;
     width: 100%;
-    height: 55rem;
+    height: 60rem;
     @media only screen and (min-width: 48em) {
         height: 45rem;
     }

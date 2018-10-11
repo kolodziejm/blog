@@ -64,5 +64,11 @@ module.exports = {
         // Add any options here
       }
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://kolomar.us19.list-manage.com/subscribe/post?u=cbec103bbbc76d2fc1cb15995&amp;id=5ddab57912',
+      }
+    },
   ],
 }

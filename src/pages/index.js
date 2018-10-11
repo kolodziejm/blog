@@ -19,11 +19,26 @@ import Form from '../components/cta/Form';
 import CtaInput from '../components/inputs/CtaInput';
 import CtaSubmit from '../components/inputs/CtaSubmit';
 
+import addToMailChimp from 'gatsby-plugin-mailchimp';
+import Paragraph from '../components/typography/Paragraph';
+
+const ThankYouMessage = styled(Paragraph)`
+
+  @media only screen and (min-width: 48em) {
+    font-size: 1.8rem;
+  }
+
+  font-size: 1.5rem;
+  color: #ABFF4F;
+  margin-bottom: 3rem;
+`;
 
 class BlogIndex extends React.Component {
 
   state = {
-    showMobileNav: false
+    showMobileNav: false,
+    formEmail: '',
+    showSubMessage: false
   }
 
   switchMobileNav = (e) => {
@@ -34,8 +49,32 @@ class BlogIndex extends React.Component {
     })
   }
 
+  handleSubmit = e => {
+    e.preventDefault();
+    if (this.state.formEmail === '') {
+      return;
+    }
+    addToMailChimp(this.state.formEmail)
+      .then(data => {
+        console.log(data);
+        this.setState({ showSubMessage: true, formEmail: '' });
+        setTimeout(() => {
+          this.setState({ showSubMessage: false });
+        }, 8000)
+
+      })
+      .catch(() => {
+
+      });
+  }
+
+  inputChangedHandler = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
 
   render() {
+    console.log(this.state.formEmail);
 
     const siteTitle = this.props.data.site.siteMetadata.title;
     const siteDescription = this.props.data.site.siteMetadata.description;
@@ -71,8 +110,15 @@ class BlogIndex extends React.Component {
         <Container>
           <CtaHeader>Sign up for bonus content</CtaHeader>
           <CtaExtra margin="0 0 5rem 0">Extra tips, challenges, ideas and much more!</CtaExtra>
-          <Form>
-            <CtaInput type="email" placeholder="Enter your email address" margin="0 auto 1rem auto" />
+          {this.state.showSubMessage ? <ThankYouMessage>Thank you for subbing! You won't regret that :)</ThankYouMessage> : null}
+          <Form onSubmit={this.handleSubmit}>
+            <CtaInput
+              type="email"
+              placeholder="Enter your email address"
+              margin="0 auto 1rem auto"
+              name="formEmail"
+              onChange={this.inputChangedHandler}
+              value={this.state.formEmail} />
             <CtaSubmit type="submit" value="Sign me up!" />
           </Form>
         </Container>

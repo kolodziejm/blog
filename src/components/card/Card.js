@@ -13,7 +13,6 @@ import PostCategory from '../PostCategory';
 const Container = styled.li`
     border: none;
     list-style: none;
-    /* padding: 0 1.5rem;  zrobić ul container i tam dać padding*/ 
     
     &:not(:last-child) {
         margin-bottom: 2.5rem;
@@ -50,14 +49,14 @@ const ReadMoreBtn = styled(Link)`
     }
 `;
 
-export default ( props ) => (
+export default (props) => (
     <Container>
-        <Link to={props.postTo}><Thumbnail src={props.src} srcSet={props.srcSet} sizes={props.sizes}/></Link>
+        <Link to={props.postTo}><Thumbnail src={props.src} srcSet={props.srcSet} sizes={props.sizes} /></Link>
         <CardHeader>{props.title}</CardHeader>
         <InfoContainer>
-            <PostDate date={props.date}/>
-            <PostCategory categoryTo={props.categoryTo} category={props.category}/>
-            <PostTime time={props.time}/>
+            <PostDate date={props.date} />
+            <PostCategory categoryTo={props.categoryTo} category={props.category} />
+            <PostTime time={props.time} />
         </InfoContainer>
         <CardDescription>{props.description}</CardDescription>
         <ReadMoreBtn to={props.postTo}>Read more</ReadMoreBtn>

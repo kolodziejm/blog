@@ -43,6 +43,7 @@ class Archive extends React.Component {
           src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
           srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
           sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
+          alt={title}
           title={title}
           date={node.frontmatter.date}
           key={node.fields.slug}

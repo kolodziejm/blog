@@ -13,11 +13,11 @@ export default styled.input`
     transition: all .4s;
 
     &:focus {
-        background-color: #3A86FF;
-        color: #fff;
+        background-color: #ABFF4F;
+        color: #333;
 
         &::placeholder {
-            color: #fff;
+            color: #333;
         }
     }
 `;

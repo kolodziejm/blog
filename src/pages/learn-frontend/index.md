@@ -19,7 +19,7 @@ Back when I was starting out the freecodecamp course wasn't so well organsized, 
 
 If you want to follow along the video you'll need a good text editor - I recommend using **Visual Studio Code.** It's fast, has an intuitive interface, lots of plugins to choose from and best of all - it's completely free! :)
 
-> It's a good idea to develop some kind of noting system when you start learning. You can either use a simple paper notebook or some kind of software solution like **Evernote.** Write down most important information from each lesson - that way you can easily go back and refresh the material, and by writing a summary you should understand the lesson even better.
+> It's a good idea to develop some kind of note system when you start learning. You can either use a simple paper notebook or some kind of software solution like **Evernote.** Write down most important information from each lesson - that way you can easily go back and refresh the material, and by writing a summary you should understand the lesson even better.
 
 ### What should you know right now?
 * HTML page structure and tags

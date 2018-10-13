@@ -3,7 +3,7 @@ module.exports = {
     title: 'Kolomar Blog',
     author: 'Marcin Kołodziej',
     description: 'Blog about front-end stuff, self-improvement and more!',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    siteUrl: 'https://www.kolomar.com',
   },
   plugins: [
     {
@@ -70,5 +70,6 @@ module.exports = {
         endpoint: 'https://kolomar.us19.list-manage.com/subscribe/post?u=cbec103bbbc76d2fc1cb15995&amp;id=5ddab57912',
       }
     },
+    `gatsby-plugin-sitemap`,
   ],
 }

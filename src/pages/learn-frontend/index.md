@@ -36,7 +36,7 @@ Okay, so now you know the basics - great job! You should start doing some simple
 
 By now you should have a solid understanding of the core concepts. It's time to go to the next level. What you should focus on right now is making your websites responsive. What that means is that your website can **scale very well to different kinds of devices - from mobile to desktop.** It's especially important in 2018, as more and more users consume Internet content on mobile devices.
 
-What I'd recommend is going to Udemy and buying the Jonas Schmedtmann's course - [Advanced CSS and Sass](https://www.udemy.com/advanced-css-and-sass/?couponCode=GITHUB4). I'm not paid to advertise this course and this isn't a ref-link, I just went through it myself and I think it's a money well spent :) It'll learn you the best practices when it comes to responsive web design and you'll create 3 awesome projects too! If you can afford it I would definitely suggest checking that out.
+What I'd recommend is going to Udemy and buying the Jonas Schmedtmann's course - [Advanced CSS and Sass](https://www.udemy.com/advanced-css-and-sass/?couponCode=GITHUB4). I'm not paid to advertise this course and this isn't a ref-link, I just went through it myself and I think it's a money well spent :) It'll learn you the best practices when it comes to responsive web design, theory behind CSS, flexbox, grid, some design tricks and you'll create 3 awesome projects too! If you can afford it I would definitely suggest checking that out.
 
 If you don't want to spend any money on the course it's fine too, there is a ton of free content on the Internet. You'll just have to find it on your own and it may not be as clearly structured. **Freecodecamp** and **Youtube** are your best bets :)
 

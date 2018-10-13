@@ -40,7 +40,7 @@ What I'd recommend is going to Udemy and buying the Jonas Schmedtmann's course -
 
 If you don't want to spend any money on the course it's fine too, there is a ton of free content on the Internet. You'll just have to find it on your own and it may not be as clearly structured. **Freecodecamp** and **Youtube** are your best bets :)
 
->One tip from me - you should **avoid using the CSS frameworks for now** such as Bootstrap or Bulma. I myself touched Bootstrap too early and it made me lazy to do my own custom responsive CSS. As a front-end developer you should have an ability to write your own CSS and not depend on these external tools, they're great later on if you want a decent looking reponsive UI in no-time, but they're hardly customizable and bloat your markup. Stick to the custom CSS/SCSS for now.
+>One tip from me - you should **avoid using the CSS frameworks for now** such as Bootstrap or Bulma. I myself touched Bootstrap too early and it made me lazy to do my own custom responsive CSS. As a front-end developer you should have an ability to write your own CSS and not depend on these external tools, they're great later on if you want a decent looking responsive UI in no-time, but they're hardly customizable and bloat your markup. Stick to the custom CSS/SCSS for now.
 
 ### What you should know?
 * Basics of responsive web design (responsive units, media queries, desktop/mobile first)

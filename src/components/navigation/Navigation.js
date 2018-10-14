@@ -76,22 +76,22 @@ export default (props) => (
     <React.Fragment>
         <Container>
             <Limiter>
-            <HeadLink />
-            <Hamburger clicked={props.hamburgerClicked} active={props.showMobileNav}/>
-            <DesktopList>
-                <DesktopItem>
-                    <DesktopLink active={props.homeActive} to="/">Home</DesktopLink>
-                </DesktopItem>
-                <DesktopItem>
-                    <DesktopLink active={props.categoriesActive} to="/categories">Categories</DesktopLink>
-                </DesktopItem>
-                <DesktopItem>
-                    <DesktopLink active={props.archiveActive} to="/archive">Posts archive</DesktopLink>
-                </DesktopItem>
-                <DesktopItem>
-                    <DesktopLink active={props.aboutActive} to="/about">About me</DesktopLink>
-                </DesktopItem>
-            </DesktopList>
+                <HeadLink />
+                <Hamburger clicked={props.hamburgerClicked} active={props.showMobileNav} />
+                <DesktopList>
+                    <DesktopItem>
+                        <DesktopLink active={props.homeActive} to="/">Home</DesktopLink>
+                    </DesktopItem>
+                    <DesktopItem>
+                        <DesktopLink active={props.categoriesActive} to="/categories">Categories</DesktopLink>
+                    </DesktopItem>
+                    <DesktopItem>
+                        <DesktopLink active={props.archiveActive} to="/archive">Posts archive</DesktopLink>
+                    </DesktopItem>
+                    <DesktopItem>
+                        <DesktopLink active={props.aboutActive} to="/about">About</DesktopLink>
+                    </DesktopItem>
+                </DesktopList>
             </Limiter>
         </Container>
         <MobileList showMobileNav={props.showMobileNav}>
@@ -105,7 +105,7 @@ export default (props) => (
                 <MobileLink to="/archive">Posts archive</MobileLink>
             </MobileItem>
             <MobileItem active={props.aboutActive}>
-                <MobileLink to="/about">About me</MobileLink>
+                <MobileLink to="/about">About</MobileLink>
             </MobileItem>
         </MobileList>
     </React.Fragment>

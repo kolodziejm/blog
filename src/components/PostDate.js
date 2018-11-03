@@ -15,9 +15,9 @@ const Text = styled.span`
     color: #666;
 `;
 
-export default ( props ) => (
+export default (props) => (
     <Wrapper>
-        <MdDateRange fill="#8338EC" size="1.2rem"/>
+        <MdDateRange fill="#8338EC" size="1.2rem" />
         <Text>{props.date}</Text>
     </Wrapper>
 ); 

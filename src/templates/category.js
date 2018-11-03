@@ -11,61 +11,61 @@ import Card from '../components/card/Card';
 
 class CategoryTemplate extends React.Component {
 
-    state = {
-        showMobileNav: false
-      }
-    
-      switchMobileNav = (e) => {
-        e.preventDefault();
-    
-        this.setState({
-          showMobileNav: !this.state.showMobileNav
-        })
-      }
+  state = {
+    showMobileNav: false
+  }
 
-    render() {
-        const posts = this.props.data.allMarkdownRemark.edges;
-        const siteTitle = this.props.data.site.siteMetadata.title;
-        const siteDescription = this.props.data.site.siteMetadata.description;
-        const category = this.props.data.allMarkdownRemark.edges[0].node.frontmatter.category;
+  switchMobileNav = (e) => {
+    e.preventDefault();
 
-        console.log(posts)
+    this.setState({
+      showMobileNav: !this.state.showMobileNav
+    })
+  }
 
-        const postsMapped = posts.map(({node}) => {
-            console.log(node);
-            const title = get(node, 'frontmatter.title') || node.fields.slug
-            return (
-                <Card
-                    src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
-                    srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
-                    sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
-                    title={title}
-                    date={node.frontmatter.date}
-                    key={node.fields.slug}
-                    categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
-                    category={node.frontmatter.category}
-                    time={node.timeToRead}
-                    description={node.excerpt}
-                    postTo={node.fields.slug}
-                />
-            );
-        })
+  render() {
+    const posts = this.props.data.allMarkdownRemark.edges;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteDescription = this.props.data.site.siteMetadata.description;
+    const category = this.props.data.allMarkdownRemark.edges[0].node.frontmatter.category;
 
-        return (
-            <Layout>
-                <Helmet
-                    htmlAttributes={{ lang: 'en' }}
-                    meta={[{ name: 'description', content: siteDescription }]}
-                    title={`${category} | ${siteTitle}`}
-                />
-                <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
-                <PageHeader margin="9rem 0 3rem 0">{category}</PageHeader>
-                <CardsList>
-                    {postsMapped}
-                </CardsList>
-            </Layout>
-        )
-    }
+    console.log(posts)
+
+    const postsMapped = posts.map(({ node }) => {
+      console.log(node);
+      const title = get(node, 'frontmatter.title') || node.fields.slug
+      return (
+        <Card
+          src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
+          srcSet={node.frontmatter.thumbnail.childImageSharp.fluid.srcSet}
+          sizes={node.frontmatter.thumbnail.childImageSharp.fluid.sizes}
+          title={title}
+          date={node.frontmatter.date}
+          key={node.fields.slug}
+          categoryTo={`/${node.frontmatter.category.toLowerCase()}`}
+          category={node.frontmatter.category}
+          time={node.timeToRead}
+          description={node.excerpt}
+          postTo={node.fields.slug}
+        />
+      );
+    })
+
+    return (
+      <Layout>
+        <Helmet
+          htmlAttributes={{ lang: 'en' }}
+          meta={[{ name: 'description', content: siteDescription }]}
+          title={`${category} | ${siteTitle}`}
+        />
+        <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
+        <PageHeader margin="9rem 0 3rem 0">{category}</PageHeader>
+        <CardsList>
+          {postsMapped}
+        </CardsList>
+      </Layout>
+    )
+  }
 }
 
 export default CategoryTemplate
@@ -89,7 +89,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "D MMMM, YYYY")
             title
             category
             thumbnail {

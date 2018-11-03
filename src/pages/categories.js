@@ -70,7 +70,7 @@ class Categories extends React.Component {
           meta={[{ name: 'Index page of the blog', content: siteDescription }]}
           title={siteTitle}
         />
-        <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav}/>
+        <Navigation categoriesActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
         <PageHeader margin="9rem 0 5rem 0">Post categories</PageHeader>
         <CategoriesContainer>
           {mappedCategories}

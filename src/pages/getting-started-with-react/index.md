@@ -1,5 +1,5 @@
 ---
-title: How to start using React
+title: Getting started with React
 date: 2018-11-03
 category: React
 thumbnail: './thumbnail.jpg'

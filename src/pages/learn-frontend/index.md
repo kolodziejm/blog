@@ -21,7 +21,7 @@ If you want to follow along the video you'll need a good text editor - I recomme
 
 > It's a good idea to develop some kind of note system when you start learning. You can either use a simple paper notebook or some kind of software solution like **Evernote.** Write down most important information from each lesson - that way you can easily go back and refresh the material, and by writing a summary you should understand the lesson even better.
 
-### What should you know right now?
+### What you should know right now?
 * HTML page structure and tags
 * HTML5 semantics
 * CSS selectors, basic properties, box model

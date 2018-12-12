@@ -25,4 +25,4 @@ In your **"scripts"** section add 2 new scripts - ```"predeploy": "npm run build
 
 ## Deploy time
 
-After you've done these steps you're finally ready to deploy! All you have to do is type ```npm run deploy``` After a short period of time your app will be published on the URL you've specified in package.json
+After you've done these steps there is only one more thing to do! All you have to do is type ```npm run deploy``` After a short period of time your app will be published on the URL you've specified in package.json

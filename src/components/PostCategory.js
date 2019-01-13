@@ -21,9 +21,9 @@ const Text = styled(Link)`
     }
 `;
 
-export default ( props ) => (
+export default (props) => (
     <Wrapper>
-        <MdList fill="#8338EC" size="1.6rem"/>
+        <MdList fill="#8338EC" size="16px" />
         <Text to={props.categoryTo}>{props.category}</Text>
     </Wrapper>
 ); 

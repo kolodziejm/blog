@@ -15,9 +15,9 @@ const Text = styled.span`
     color: #666;
 `;
 
-export default ( props ) => (
+export default (props) => (
     <Wrapper>
-        <MdSchedule fill="#8338EC" size="1.2rem"/>
+        <MdSchedule fill="#8338EC" size="12px" />
         <Text>{props.time} {props.time === 1 ? 'minute' : 'minutes'}</Text>
     </Wrapper>
 ); 

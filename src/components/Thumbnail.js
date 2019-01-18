@@ -6,4 +6,5 @@ export default styled.img`
     margin: 0 auto 1rem auto;
     display: block;
     width: 100%;
+    border-radius: 10px;
 `;

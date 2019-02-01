@@ -11,10 +11,6 @@ import PageHeader from '../components/typography/PageHeader';
 import Card from '../components/card/Card';
 import CardsList from '../components/CardsList';
 
-const ArchiveCardsList = styled(CardsList)`
-  max-width: 35rem;
-`;
-
 class Archive extends React.Component {
 
   state = {
@@ -65,9 +61,9 @@ class Archive extends React.Component {
         />
         <Navigation archiveActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
         <PageHeader margin="9rem 0 3rem 0">Entire post library</PageHeader>
-        <ArchiveCardsList>
+        <CardsList>
           {postsMapped}
-        </ArchiveCardsList>
+        </CardsList>
       </Layout>
     )
   }

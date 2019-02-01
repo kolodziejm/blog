@@ -10,6 +10,7 @@ const Button = styled.button`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    outline: none;
 
     @media only screen and (min-width: 48em) {
         display: none;
@@ -17,6 +18,6 @@ const Button = styled.button`
 `;
 
 export default (props) => (
-<Button onClick={props.clicked}>{props.active ? <MdClose fill="#fff"/> : <MdMenu fill="#fff"/>}</Button>
+    <Button onClick={props.clicked}>{props.active ? <MdClose fill="#fff" /> : <MdMenu fill="#fff" />}</Button>
 );
 

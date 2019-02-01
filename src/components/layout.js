@@ -13,7 +13,7 @@ class Template extends React.Component {
     return (
       <Div>
         {this.props.children}
-        <Footer/>
+        <Footer />
       </Div>
     )
   }

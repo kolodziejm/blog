@@ -15,6 +15,7 @@ const Text = styled(Link)`
     font-size: 1.3rem;
     margin-left: .3rem;
     color: #FF006E;
+    transition: all .3s ease-in-out;
 
     &:hover {
         color: #cc0058;

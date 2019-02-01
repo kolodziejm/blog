@@ -13,9 +13,12 @@ import PostCategory from '../PostCategory';
 const Container = styled.li`
     border: none;
     list-style: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,.65);
+    border-radius: 8px;
+    padding: 16px;
     
     &:not(:last-child) {
-        margin-bottom: 2.5rem;
+        margin-bottom: 3.2rem;
     }
 `;
 
@@ -42,7 +45,9 @@ const ReadMoreBtn = styled(Link)`
     text-align: center;
     color: #fff;
     background-color: #FF006E;
+    border-radius: 4px;
     font-size: 1.6rem;
+    transition: all .3s ease-in-out;
 
     &:hover {
         background-color: #cc0058;

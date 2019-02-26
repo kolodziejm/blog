@@ -73,8 +73,8 @@ class About extends React.Component {
                 <Header margin="9rem 0 3rem 0">Howdy! Welcome to my blog!</Header>
                 <DescContainer>
                     <Paragraph>My name is <b>Marcin Kołodziej.</b> I'm a last year student of an IT High School in Poland. I started my front-end journey at the beginning of 2018 and I really got into it.</Paragraph>
-                    <Paragraph>I created this blog to share my knowledge and give something back to the community, refresh a couple of concepts and improve my English skills along the way :) Because I started from scratch not that long ago, I'm aware of the beginner's most common pitfalls when it comes to learning front-end stuff. I deeply hope that you'll find value on my blog.</Paragraph>
-                    <Paragraph>Outside of programming I'm striving to improve as a poker player and as a simrace car driver in Assetto Corsa :) Also I devote a lot of attention to the topics of self-improvement in order to become more effective.</Paragraph>
+                    <Paragraph>I created this blog to share my knowledge and give something back to the community, refresh a couple of concepts and improve my English skills along the way :) Because I've started from scratch not that long ago, I'm aware of the beginners' most common pitfalls when it comes to learning front-end stuff. I deeply hope that you'll find value on my blog.</Paragraph>
+                    <Paragraph>Outside of programming I really like to play strategy games like Starcraft 2 and drive a little bit in Assetto Corsa :) Also I'm aiming to improve myself every day in order to become more effective.</Paragraph>
                     <ContentHeader>How did I build this blog?</ContentHeader>
                     <Paragraph>I built this blog using GatsbyJS. It's an awesome, fast and modern static site generator that uses React.</Paragraph>
                     <ContentHeader>Main tools that I use</ContentHeader>

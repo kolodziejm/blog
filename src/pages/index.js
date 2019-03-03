@@ -18,6 +18,7 @@ import CtaExtra from '../components/typography/CtaExtra'
 import Form from '../components/cta/Form'
 import CtaInput from '../components/inputs/CtaInput'
 import CtaSubmit from '../components/inputs/CtaSubmit'
+import Content from '../components/Content'
 
 import addToMailChimp from 'gatsby-plugin-mailchimp'
 import Paragraph from '../components/typography/Paragraph'
@@ -30,11 +31,6 @@ const ThankYouMessage = styled(Paragraph)`
   font-size: 1.5rem;
   color: #abff4f;
   margin-bottom: 3rem;
-`
-
-const Content = styled.div`
-  background-color: #f8f8f8;
-  padding: 4rem 0;
 `
 
 class BlogIndex extends React.Component {

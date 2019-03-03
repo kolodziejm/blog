@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
@@ -6,31 +6,29 @@ import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 
-import Navigation from '../components/navigation/Navigation';
-import PageHeader from '../components/typography/PageHeader';
-import Card from '../components/card/Card';
-import CardsList from '../components/CardsList';
+import Navigation from '../components/navigation/Navigation'
+import PageHeader from '../components/typography/PageHeader'
+import Card from '../components/card/Card'
+import CardsList from '../components/CardsList'
+import Content from '../components/Content'
 
 class Archive extends React.Component {
-
   state = {
-    showMobileNav: false
+    showMobileNav: false,
   }
 
-  switchMobileNav = (e) => {
-    e.preventDefault();
+  switchMobileNav = e => {
+    e.preventDefault()
 
     this.setState({
-      showMobileNav: !this.state.showMobileNav
+      showMobileNav: !this.state.showMobileNav,
     })
   }
 
-
   render() {
-
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const siteDescription = this.props.data.site.siteMetadata.description;
-    const posts = this.props.data.allMarkdownRemark.edges;
+    const siteTitle = this.props.data.site.siteMetadata.title
+    const siteDescription = this.props.data.site.siteMetadata.description
+    const posts = this.props.data.allMarkdownRemark.edges
 
     const postsMapped = posts.map(({ node }) => {
       const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -59,17 +57,21 @@ class Archive extends React.Component {
           meta={[{ name: 'Entire post library', content: siteDescription }]}
           title={siteTitle}
         />
-        <Navigation archiveActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
-        <PageHeader margin="9rem 0 3rem 0">Entire post library</PageHeader>
-        <CardsList>
-          {postsMapped}
-        </CardsList>
+        <Navigation
+          archiveActive="true"
+          hamburgerClicked={this.switchMobileNav}
+          showMobileNav={this.state.showMobileNav}
+        />
+        <Content>
+          <PageHeader margin="0 0 3rem 0">Entire post library</PageHeader>
+          <CardsList>{postsMapped}</CardsList>
+        </Content>
       </Layout>
     )
   }
 }
 
-export default Archive;
+export default Archive
 
 export const pageQuery = graphql`
   query {

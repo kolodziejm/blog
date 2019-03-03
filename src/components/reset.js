@@ -8,6 +8,10 @@ injectGlobal`
     padding: 0;
     box-sizing: inherit;
 }
+
+html, body, #___gatsby, #___gatsby > div {
+  height: 100%
+}
  
 html {
     font-size: 62.5%; // 1 rem = 10px;

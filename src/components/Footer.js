@@ -8,7 +8,7 @@ import twitterIcon from '../assets/twitter.svg'
 import LogoLink from '../components/LogoLink'
 
 const Container = styled.footer`
-  padding: 1.8rem 0;
+  padding: 2.4rem 0;
   background-image: linear-gradient(
     to right,
     rgba(131, 56, 236, 0.95) 20%,
@@ -18,8 +18,13 @@ const Container = styled.footer`
 
 const LegalContainer = styled.div`
   text-align: center;
-  @media only screen and (min-width: 64em) {
-    margin-right: -165px;
+  &:after {
+    margin-top: 2rem;
+    content: '';
+    border: 1px solid #555;
+    border-radius: 50px;
+    display: inline-block;
+    width: 200px;
   }
 `
 
@@ -41,7 +46,7 @@ const Policy = styled.a`
 
 const IconContainer = styled.ul`
   list-style: none;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
 `
@@ -57,10 +62,6 @@ const IconLink = styled.a``
 const ContentLimiter = styled.div`
   margin: 0 auto;
   max-width: 1200px;
-  @media only screen and (min-width: 64em) {
-    display: flex;
-    justify-content: space-around;
-  }
 `
 
 export default props => (

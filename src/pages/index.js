@@ -1,84 +1,83 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 
-import Navigation from '../components/navigation/Navigation';
-import PageHeader from '../components/typography/PageHeader';
-import Card from '../components/card/Card';
-import CardsList from '../components/CardsList';
-import StyledLink from '../components/Link';
-import Container from '../components/cta/Container';
-import CtaHeader from '../components/typography/CtaHeader';
-import MediumHeader from '../components/typography/MediumHeader';
-import CtaExtra from '../components/typography/CtaExtra';
-import Form from '../components/cta/Form';
-import CtaInput from '../components/inputs/CtaInput';
-import CtaSubmit from '../components/inputs/CtaSubmit';
+import Navigation from '../components/navigation/Navigation'
+import PageHeader from '../components/typography/PageHeader'
+import Card from '../components/card/Card'
+import CardsList from '../components/CardsList'
+import StyledLink from '../components/Link'
+import Container from '../components/cta/Container'
+import CtaHeader from '../components/typography/CtaHeader'
+import MediumHeader from '../components/typography/MediumHeader'
+import CtaExtra from '../components/typography/CtaExtra'
+import Form from '../components/cta/Form'
+import CtaInput from '../components/inputs/CtaInput'
+import CtaSubmit from '../components/inputs/CtaSubmit'
 
-import addToMailChimp from 'gatsby-plugin-mailchimp';
-import Paragraph from '../components/typography/Paragraph';
+import addToMailChimp from 'gatsby-plugin-mailchimp'
+import Paragraph from '../components/typography/Paragraph'
 
 const ThankYouMessage = styled(Paragraph)`
-
   @media only screen and (min-width: 48em) {
     font-size: 1.8rem;
   }
 
   font-size: 1.5rem;
-  color: #ABFF4F;
+  color: #abff4f;
   margin-bottom: 3rem;
-`;
+`
+
+const Content = styled.div`
+  background-color: #f8f8f8;
+  padding: 4rem 0;
+`
 
 class BlogIndex extends React.Component {
-
   state = {
     showMobileNav: false,
     formEmail: '',
-    showSubMessage: false
+    showSubMessage: false,
   }
 
-  switchMobileNav = (e) => {
-    e.preventDefault();
+  switchMobileNav = e => {
+    e.preventDefault()
 
     this.setState({
-      showMobileNav: !this.state.showMobileNav
+      showMobileNav: !this.state.showMobileNav,
     })
   }
 
   handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     if (this.state.formEmail === '') {
-      return;
+      return
     }
     addToMailChimp(this.state.formEmail)
       .then(data => {
-        console.log(data);
-        this.setState({ showSubMessage: true, formEmail: '' });
+        console.log(data)
+        this.setState({ showSubMessage: true, formEmail: '' })
         setTimeout(() => {
-          this.setState({ showSubMessage: false });
+          this.setState({ showSubMessage: false })
         }, 8000)
-
       })
-      .catch(() => {
-
-      });
+      .catch(() => {})
   }
 
   inputChangedHandler = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value })
   }
 
-
   render() {
-    console.log(this.state.formEmail);
+    console.log(this.state.formEmail)
 
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const siteDescription = this.props.data.site.siteMetadata.description;
-    const posts = this.props.data.allMarkdownRemark.edges;
+    const siteTitle = this.props.data.site.siteMetadata.title
+    const siteDescription = this.props.data.site.siteMetadata.description
+    const posts = this.props.data.allMarkdownRemark.edges
 
     const postsMapped = posts.map(({ node }) => {
       const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -104,14 +103,24 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'Index page of the blog', content: siteDescription }]}
+          meta={[{ name: 'Home', content: siteDescription }]}
           title={siteTitle}
         />
-        <Navigation homeActive="true" hamburgerClicked={this.switchMobileNav} showMobileNav={this.state.showMobileNav} />
+        <Navigation
+          homeActive="true"
+          hamburgerClicked={this.switchMobileNav}
+          showMobileNav={this.state.showMobileNav}
+        />
         <Container>
           <CtaHeader>Sign up for bonus content</CtaHeader>
-          <CtaExtra margin="0 0 5rem 0">Extra tips, challenges, ideas and much more!</CtaExtra>
-          {this.state.showSubMessage ? <ThankYouMessage>Thank you for subbing! You won't regret that :)</ThankYouMessage> : null}
+          <CtaExtra margin="0 0 5rem 0">
+            Extra tips, challenges, ideas and much more!
+          </CtaExtra>
+          {this.state.showSubMessage && (
+            <ThankYouMessage>
+              Thank you for subbing! You won't regret that :)
+            </ThankYouMessage>
+          )}
           <Form onSubmit={this.handleSubmit}>
             <CtaInput
               type="email"
@@ -119,14 +128,16 @@ class BlogIndex extends React.Component {
               margin="0 auto 1rem auto"
               name="formEmail"
               onChange={this.inputChangedHandler}
-              value={this.state.formEmail} />
+              required
+              value={this.state.formEmail}
+            />
             <CtaSubmit type="submit" value="Sign me up!" />
           </Form>
         </Container>
-        <PageHeader margin="3rem 0 3rem 0">Latest posts</PageHeader>
-        <CardsList>
-          {postsMapped}
-        </CardsList>
+        <Content>
+          <PageHeader margin="0 0 3rem 0">Latest posts</PageHeader>
+          <CardsList>{postsMapped}</CardsList>
+        </Content>
       </Layout>
     )
   }
@@ -142,7 +153,10 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC } limit: 10) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 10
+    ) {
       edges {
         node {
           excerpt

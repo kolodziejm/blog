@@ -14,11 +14,10 @@ export default styled.input`
   transition: all 0.4s;
 
   &:focus {
-    background-color: #ff006e;
-    color: #fff;
+    border: 1px solid #ff006e;
 
     &::placeholder {
-      color: #fff;
+      color: #3a86ff;
     }
   }
 `

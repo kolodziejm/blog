@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export default styled.div`
   max-width: 80rem;
+  min-height: 100%;
   margin: 0 auto 6rem auto;
   font-size: 1.8rem;
   padding: 0 1.5rem;
   color: #333;
-  background-color: #f8f8f8;
 
   article,
   aside,

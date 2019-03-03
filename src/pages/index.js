@@ -55,7 +55,6 @@ class BlogIndex extends React.Component {
     }
     addToMailChimp(this.state.formEmail)
       .then(data => {
-        console.log(data)
         this.setState({ showSubMessage: true, formEmail: '' })
         setTimeout(() => {
           this.setState({ showSubMessage: false })
@@ -69,8 +68,6 @@ class BlogIndex extends React.Component {
   }
 
   render() {
-    console.log(this.state.formEmail)
-
     const siteTitle = this.props.data.site.siteMetadata.title
     const siteDescription = this.props.data.site.siteMetadata.description
     const posts = this.props.data.allMarkdownRemark.edges

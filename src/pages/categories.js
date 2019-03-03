@@ -55,8 +55,6 @@ class Categories extends React.Component {
       return array.indexOf(value) == index
     })
 
-    console.log(categories)
-
     const mappedCategories = categories.map(category => {
       return (
         <CategoriesItem key={category}>

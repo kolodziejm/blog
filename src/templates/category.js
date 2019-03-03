@@ -36,10 +36,7 @@ class CategoryTemplate extends React.Component {
     const category = this.props.data.allMarkdownRemark.edges[0].node.frontmatter
       .category
 
-    console.log(posts)
-
     const postsMapped = posts.map(({ node }) => {
-      console.log(node)
       const title = get(node, 'frontmatter.title') || node.fields.slug
       return (
         <Card

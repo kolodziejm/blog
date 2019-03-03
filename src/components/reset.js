@@ -32,7 +32,7 @@ html {
 body {
     @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700');
     font-family: 'Lato', sans-serif;
-    background-color: #fcfcfc;
+    background-color: #f8f8f8;
     box-sizing: border-box;
     overflow-x: hidden;
     line-height: 1.5;

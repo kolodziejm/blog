@@ -4,6 +4,7 @@ import image from '../../assets/abstract-message-sent.png'
 
 export default styled.header`
   display: block;
+  border-bottom: 1px solid #abff4f;
   text-align: center;
   padding: 6rem 1rem 1rem 1rem;
   width: 100%;

@@ -11,7 +11,6 @@ import CardsList from '../components/CardsList'
 import Card from '../components/card/Card'
 
 const Content = styled.div`
-  height: 100%;
   padding: 5rem 0;
   background: #f8f8f8;
 `

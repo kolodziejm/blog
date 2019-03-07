@@ -72,6 +72,7 @@ export default props => (
         <div>
           <Legal>Copyright &copy; Marcin Kołodziej 2019</Legal>
           <Policy
+            rel="noopener"
             href="https://privacypolicies.com/privacy/view/eadf5ceec1f9b671511e3ac25d5472aa"
             target="_blank"
           >
@@ -81,17 +82,29 @@ export default props => (
       </LegalContainer>
       <IconContainer>
         <IconItem>
-          <IconLink href="https://github.com/kolodziejm" target="_blank">
+          <IconLink
+            rel="noopener"
+            href="https://github.com/kolodziejm"
+            target="_blank"
+          >
             <img src={githubIcon} alt="Github" />
           </IconLink>
         </IconItem>
         <IconItem>
-          <IconLink href="https://www.linkedin.com/in/kolomar/" target="_blank">
+          <IconLink
+            rel="noopener"
+            href="https://www.linkedin.com/in/kolomar/"
+            target="_blank"
+          >
             <img src={linkedinIcon} alt="linkedIn" />
           </IconLink>
         </IconItem>
         <IconItem>
-          <IconLink href="https://twitter.com/Kolomar_dev" target="_blank">
+          <IconLink
+            rel="noopener"
+            href="https://twitter.com/Kolomar_dev"
+            target="_blank"
+          >
             <img src={twitterIcon} alt="Twitter" />
           </IconLink>
         </IconItem>

@@ -44,13 +44,13 @@ const ReadMoreBtn = styled(Link)`
   padding: 0.5rem 0;
   text-align: center;
   color: #fff;
-  background-color: #ff006e;
+  background-color: #8338ec;
   border-radius: 4px;
   font-size: 1.6rem;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: #cc0058;
+    background-color: #4a1f86;
   }
 `
 

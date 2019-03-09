@@ -66,7 +66,7 @@ These are the utilities you can use as a substitute or addition to the software 
 
 - **sticky notes**
 
-Good old sticky notes, can serve as an alternative to the todo list software I listed. Just stick them to the front of your monitor, and take them off once you'll finish the tasks. Good part is that they're always visible, you don't have to explicitly go and check out your tasks in a software.
+Good old sticky notes, can serve as an alternative to the todo list software I listed. Just stick them to the front of your monitor, and take them off once you finish the tasks. Good part is that they're always visible, you don't have to explicitly go and check out your tasks in a software.
 
 - **whiteboard or wall chalkboard**
 
